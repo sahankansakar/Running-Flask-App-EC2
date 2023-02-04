@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <style>
+        nav a {
+            font-size: 2em;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+	{% if session['username']  %}
+        <a href="{{ url_for('details') }}">My Details</a>
+        <a href="{{ url_for('count') }}">Word Count</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+	{% else %}
+        <a href="{{ url_for('registration') }}">Registration</a>
+	{% endif %}
+    </nav>
+    <hr>
+    <div style="width: 50%; margin: auto">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

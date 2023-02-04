@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} User Details {% endblock %}</h1>
+    <form action="{{ url_for('details') }}"  method="post">
+        <label for="title">First Name</label>
+        <br>
+        <input type="text" name="firstname"
+               placeholder="First Name"
+               value="{{ user['firstname'] }}"></input>
+        <br>
+        <label for="title">Last Name</label>
+        <br>
+        <input type="text" name="lastname"
+               placeholder="Last Name"
+               value="{{ user['lastname'] }}"></input>
+        <br>
+        <label for="title">Email</label>
+        <br>
+        <input type="text" name="email"
+               placeholder="Email"
+               value="{{ user['email'] }}"></input>
+
+        <br>
+	<input class="btn btn-default" type="submit" value="Update">
+    </form>
+{% endblock %}

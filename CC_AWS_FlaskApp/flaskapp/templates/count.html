@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Upload a file to word count: {% endblock %}</h1>
+    <div class="container">
+	<p>
+	<b>For the extra credit</b>
+	</p>
+      <form action="{{ url_for('count') }}" method="post" enctype = "multipart/form-data">
+	<p>
+	 <input type = "file" name = "the_file" />
+	</p>
+	<p>
+	 <input type = "submit"/>
+	</p>
+      </form>
+      {% if message %}
+      <p class="error"><strong>Status:</strong> {{ message }}</p>
+      <p><strong>Download the file:</strong> <a href="{{ url_for('download') }}" target="_blank">Download</a></p>
+      {% endif %}
+    </div>
+{% endblock %}

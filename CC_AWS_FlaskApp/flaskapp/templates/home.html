@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Information for User {{ user['username'] }} {% endblock %}</h1>
+    <p>
+      <p>
+        <b>First Name:</b>
+               {{ user['firstname'] }}
+      </p>
+      <p>
+        <b>Last Name:</b>
+               {{ user['lastname'] }}
+      </p>
+      <p>
+        <b>Email:</b>
+               {{ user['email'] }}
+      </p>
+      <br/>
+      <p>
+      <b>For the extra credit</b> (will display below when a file is uploaded)
+      </p>
+	{% if user['text_file'] %}
+      <p>
+        <b>Uploaded file:</b>
+	<p>
+               {{ user['text_file'] }}
+	</p>
+	<p><strong>Download the file:</strong> <a href="{{ url_for('download') }}" target="_blank">Download</a></p>
+      </p>
+      {% endif %}
+    </p>
+{% endblock %}
