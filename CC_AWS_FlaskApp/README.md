@@ -1,7 +1,7 @@
 # learning-flask
 python, flask, sqlite3, templates
 
-Author: Allen Detmer
+Author: Sahan Kansakar
 Runs on an EC2 instance, configured apache server on ubuntu, with sqlite3
 Interactive web for:
     1. registration page - registers a new user
